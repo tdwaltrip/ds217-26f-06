@@ -1,0 +1,10 @@
+table,issue,decision,reason
+patients,exact duplicate rows,Removed exact duplicates.,They contain the same information so there is no need to keep them.
+patients,gender spellings that are not a code,"Changed gender values to F, M, or X and left unknown values missing.",This keeps the gender categories consistent.
+patients,site codes needing normalization,Made site codes uppercase and removed spaces and hyphens.,This makes sure the site codes follow the same format.
+patients,birth_year sentinel 9999,Replaced 9999 with missing values.,9999 can't be a birth year.
+visits,weight column named wt_kg in visits_south.csv,Renamed wt_kg to weight_kg.,Both visit files need the same column names to combine them.
+visits,sbp sentinel 999 and readings outside 70 through 250,Replaced these readings with missing values.,These values aren't within the accepted blood pressure range.
+visits,impossible and loosely written visit dates,Kept valid dates in YYYY-MM-DD format and made the others missing.,This keeps the dates consistent and removes invalid dates.
+visits,repeated patient_id and visit pairs,Kept the later reading for each repeated visit.,Each patient should only have one record for each visit.
+sites,repeated site_code rows,Keep only current site records.,Retired records should be excluded so each site has one record.
